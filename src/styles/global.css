@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Bold.ttf");
+  font-weight: 700;
+}
+
+@import "tailwindcss";
+
+@theme {
+  /* Cores */
+  --color-development: #ff6467;
+  --color-accent-blue: #4c505f;
+  --color-accent-blue-hover: #3c3f4a;
+
+  /* Breakpoint */
+  --breakpoint-xl: 90rem;
+}
+
+:root {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.container {
+  --max-width: 728px;
+  --px: 2rem;
+  width: min(var(--max-width), 100% - var(--px) * 2);
+  margin: 0 auto;
+}
+
+@media (width >= 80em) {
+  .container {
+    --max-width: 80em;
+    --px: 7.5rem;
+  }
+}
