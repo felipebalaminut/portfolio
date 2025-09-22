@@ -33,8 +33,10 @@
 @theme {
   /* Cores */
   --color-development: #ff6467;
-  --color-accent-blue: #4c505f;
-  --color-accent-blue-hover: #3c3f4a;
+  --color-accent-primary: #5a80a6;
+  --color-accent-primary-hover: #4d6c8b;
+
+  --color-surface-primary: #151515;
 
   /* Breakpoint */
   --breakpoint-xl: 90rem;
@@ -44,6 +46,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  color: white;
 }
 
 .container {

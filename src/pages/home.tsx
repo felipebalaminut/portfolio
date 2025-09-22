@@ -1,9 +1,13 @@
-import { Header } from "../components/Header/index";
+import { Header } from "../components/Header/Header";
+
+import { LanguageProvider } from "../context/LanguageContext";
 
 export function Home() {
   return (
     <div>
-      <Header />
+      <LanguageProvider>
+        <Header />
+      </LanguageProvider>
     </div>
   );
 }
