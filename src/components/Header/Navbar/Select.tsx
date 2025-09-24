@@ -1,6 +1,3 @@
-// 1. Alterar as cores
-// 2.
-
 import { useState } from "react";
 import { useLanguage } from "../../../context/LanguageContext";
 import { translations } from "../../../utils/translates";
@@ -10,12 +7,12 @@ export function Select() {
   const { language, setLanguage } = useLanguage();
 
   const toggleDropDown = () => {
-    setOpen(!open);
+    setOpen((prevOpen) => !prevOpen);
   };
 
   const handleChange = (lang: "pt" | "en") => {
     setLanguage(lang);
-    setOpen(!open);
+    setOpen((prevOpen) => !prevOpen);
   };
 
   return (

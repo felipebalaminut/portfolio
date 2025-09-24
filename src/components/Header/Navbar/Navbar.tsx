@@ -4,21 +4,23 @@ import { translations } from "../../../utils/translates";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { MenuButton } from "./MenuButton";
+import { NavItem } from "./NavItem";
+import styles from "./NavItem.module.css";
 
 export function Navbar() {
   const { language } = useLanguage();
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
-    setOpen(!open);
+    setOpen((prevOpen) => !prevOpen);
   };
 
   const closeMenu = () => {
-    setOpen(!open);
+    setOpen((prevOpen) => !prevOpen);
   };
 
   return (
-    <nav className="container py-8 flex items-center justify-between xl:flex-column">
+    <nav className="container py-8 flex items-center justify-between">
       <p className="text-development">###</p>
 
       <MenuButton onClick={toggleMenu} open={open} />
@@ -42,31 +44,33 @@ export function Navbar() {
             }}
             className="fixed top-0 right-0 bg-surface-primary px-8 py-24 h-screen w-68 z-30"
           >
-            <ul className="flex flex-col items-center gap-12 [&>li]:text-white [&>li]:text-base">
-              <li>
+            <ul className="flex flex-col items-center gap-12 [&>li]:text-base">
+              <NavItem>
                 <a href="">{translations[language].header.nav.Item1}</a>
-              </li>
-              <li>
+              </NavItem>
+              <NavItem>
                 <a href="">{translations[language].header.nav.Item2}</a>
-              </li>
-              <li>
+              </NavItem>
+              <NavItem>
                 <Select />
-              </li>
+              </NavItem>
             </ul>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <ul className="hidden md:flex items-center gap-12 [&>li]:text-white [&>li]:text-base">
-        <li className="relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-accent-primary  after:scale-x-0 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100">
+      <ul className="hidden md:flex items-center gap-12 [&>li]:text-base">
+        <NavItem className={`relative ${styles.navLink}`}>
           <a href="">{translations[language].header.nav.Item1}</a>
-        </li>
-        <li className="relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-accent-primary  after:scale-x-0 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100">
+        </NavItem>
+
+        <NavItem className={`relative ${styles.navLink}`}>
           <a href="">{translations[language].header.nav.Item2}</a>
-        </li>
-        <li>
+        </NavItem>
+
+        <NavItem>
           <Select />
-        </li>
+        </NavItem>
       </ul>
     </nav>
   );

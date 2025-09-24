@@ -1,0 +1,15 @@
+.bgHeader {
+  background-image: url("../../assets/bg-header-mobile.png");
+}
+
+@media (min-width: 768px) {
+  .bgHeader {
+    background-image: url("../../assets/bg-header-tablet.png");
+  }
+}
+
+@media (width >= 1440px) {
+  .bgHeader {
+    background-image: url("../../assets/bg-header.png");
+  }
+}
