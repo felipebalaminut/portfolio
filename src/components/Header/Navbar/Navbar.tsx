@@ -42,13 +42,13 @@ export function Navbar() {
             transition={{
               duration: 0.25,
             }}
-            className="fixed top-0 right-0 bg-surface-primary px-8 py-24 h-screen w-68 z-30"
+            className="fixed top-0 right-0 bg-surface-primary rounded-l-xl px-8 py-32 h-screen w-68 z-30"
           >
-            <ul className="flex flex-col items-center gap-12 [&>li]:text-base">
-              <NavItem>
+            <ul className="flex flex-col items-center gap-16 [&>li]:text-base">
+              <NavItem className={`relative ${styles.navLink}`}>
                 <a href="">{translations[language].header.nav.Item1}</a>
               </NavItem>
-              <NavItem>
+              <NavItem className={`relative ${styles.navLink}`}>
                 <a href="">{translations[language].header.nav.Item2}</a>
               </NavItem>
               <NavItem>
